@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #f0adad;
+            color: #000000;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        .menu-category {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.5em;
+            margin-top: 1em;
+        }
+
+        .menuitem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+        button {
+            background-color: #e62600;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e62600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Restaurant 3</h1>
+        <p>Exquisite flavors, impeccable service—indulge in a culinary journey with us.</p>
+    </header>
+
+    <section id="Starter" class="menu-category">
+        <h2>Starter</h2>
+        <div class="menuitem">
+            <img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="50">
+            <span>French Fries</span>
+            <span>₹120</span>
+            <button onclick="addToCart( 'French Fries', 120)">Add to Cart</button>
+        </div>
+        <div class="menuitem">
+            <img src="https://images.unsplash.com/photo-1690401769082-5f475f87fb22?q=80&w=2017&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="50">
+            <span>Chilli Paneer</span>
+            <span>₹150</span>
+            <button onclick="addToCart( 'Chilli Paneer',150)">Add to Cart</button>
+        </div>
+        <!-- Add more as needed -->
+    </section>
+
+    <section id="main-courses" class="menu-category">
+        <h2>Main Courses</h2>
+        <div class="menuitem">
+            <img src="https://as2.ftcdn.net/v2/jpg/03/20/04/07/1000_F_320040716_HEueHogyeIBbvoIwcF2vrEwXD7t74lgB.jpg" alt="" width="50" height="">
+            <span>Malai Kofta</span>
+            <span>₹250</span>
+            <button onclick="addToCart( 'Malai Kofta',250)">Add to Cart</button>
+        </div>
+        <div class="menuitem">
+            <img src="https://img.freepik.com/free-photo/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table_2829-18717.jpg?w=900&t=st=1702647525~exp=1702648125~hmac=dd8d0c9650374d274900203eaf2c0c24dbe1d7e586a92a972f8f2cd8844b3514" alt="" width="50">
+            <span>Dal Tadka</span>
+            <span>₹150</span>
+            <button onclick="addToCart( 'Dal Tadka',150)">Add to Cart</button>
+
+        </div>
+        <!-- Add more as needed -->
+    </section>
+
+    <section id="desserts" class="menu-category">
+        <h2>Desserts</h2>
+        <div class="menuitem">
+            <img src="https://img.freepik.com/premium-photo/chocolate-fondant-dessert-white-plate-fork_125999-765.jpg?w=900" alt="Chocolate Lava Cake" width="50">
+            <span>Chocolate Lava Cake</span>
+            <span>₹100</span>
+            <button onclick="addToCart( 'Chocolate Lava Cake',100)">Add to Cart</button>
+
+        </div>
+        <div class="menuitem">
+            <img src="https://img.freepik.com/premium-photo/kaju-katli_57665-225.jpg?w=900" alt="" width="50">
+            <span>Kaju Katli</span>
+            <span>₹300</span>
+            <button onclick="addToCart( 'Kaju Katli',300)">Add to Cart</button>
+        </div>
+        
+    </section>
+    
+
+   
+    <h2>Your Order</h2>
+
+    <ul id="cartitems">
+    <script>
+        function addToCart(itemName, itemPrice) {
+            // Get the cart items list
+            var cartList = document.getElementById('cartitems');
+
+            // Create a new list item for the cart
+            var cartitem = document.createElement('li');
+            cartitem.textContent = itemName + ' - ₹' + itemPrice.toFixed(2);
+
+            // Append the cart item to the cart list
+            cartList.appendChild(cartitem);
+        }
+    </script>
+
+</body>
+</html>
